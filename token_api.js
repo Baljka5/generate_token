@@ -6,6 +6,9 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.get('/api/', (req, res) => {
+    res.status(200).send('API is working!');
+});
 
 function generateToken(apiCode, apiSecret) {
     const timestamp = Math.floor(Date.now() / 1000);
